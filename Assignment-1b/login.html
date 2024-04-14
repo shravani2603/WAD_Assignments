@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<div class="bg"></div>
+
+<form onsubmit="return validateForm()">
+  <h2>LOGIN FORM</h2>
+  <div class="form-field">
+    <input type="email" placeholder="Email / Username" required/>
+    <!-- <input type="text" id="emailInput" placeholder="Email / Username" required/> -->
+  </div>
+  
+  <div class="form-field">
+    <input type="password" placeholder="Password" required/>       
+  </div>
+  
+  <div class="form-field">
+    <button class="btn" type="submit">Log in</button>
+  </div>
+</form>
+
+<script>
+  function validateForm() {
+    var emailInput = document.getElementById('emailInput').value;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput)) {
+      alert('Please enter a valid email address');
+      return false;
+    }
+
+    // Additional validation or form submission logic can be added here
+
+    return true; // Form will be submitted if all validations pass
+  }
+</script>
+  
+  
+</body>
+</html>
